@@ -1,7 +1,8 @@
 # formatted grep
-# params: search query (regex) & path to look in (folder)
+# params: search query (regex) & path to look in (folder includes subfolders)
 # returns: stdout formatted search results similar to sublime text's find all
 # file name (# matches in file) + context with hit
+# usage: sF "regex" path_to_a_dir
 
 sF() {
   mySearch=$1
