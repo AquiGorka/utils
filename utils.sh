@@ -15,3 +15,7 @@ sF() {
     grep -nh -A3 -B1 --color=always $mySearch $file
   done
 }
+
+# Run a docker container with interactive shell and read-only from local folder
+# remove :ro to give write access (changes to the files from within the container will be reflected to the local filesystem)
+docker run -it --volume=/Users/my-user/local-folder:/container-folder:ro --workdir="/container-folder" --memory=4g --memory-swap=4g --entrypoint=/bin/bash ubuntu:latest
